@@ -20,7 +20,6 @@
 		FD7AF10229911B4F003C99C6 /* AyushAssignmentIosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7AF10129911B4F003C99C6 /* AyushAssignmentIosUITests.swift */; };
 		FD7AF10429911B4F003C99C6 /* AyushAssignmentIosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7AF10329911B4F003C99C6 /* AyushAssignmentIosUITestsLaunchTests.swift */; };
 		FD84B90F29936A0300DC7556 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD84B90E29936A0300DC7556 /* ImageViewController.swift */; };
-		FD98A4D62992155400425CAD /* Single.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD98A4D52992155400425CAD /* Single.xib */; };
 		FD98A4D82992533200425CAD /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD98A4D72992533200425CAD /* ImageListViewController.swift */; };
 		FDDFFAA52993BC2700DC6158 /* PhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDFFAA42993BC2700DC6158 /* PhotoTableViewCell.swift */; };
 		FDDFFAA72994AFB800DC6158 /* PhotoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDFFAA62994AFB800DC6158 /* PhotoDataModel.swift */; };
@@ -61,7 +60,6 @@
 		FD7AF10129911B4F003C99C6 /* AyushAssignmentIosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyushAssignmentIosUITests.swift; sourceTree = "<group>"; };
 		FD7AF10329911B4F003C99C6 /* AyushAssignmentIosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyushAssignmentIosUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FD84B90E29936A0300DC7556 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		FD98A4D52992155400425CAD /* Single.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Single.xib; sourceTree = "<group>"; };
 		FD98A4D72992533200425CAD /* ImageListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		FDDFFAA42993BC2700DC6158 /* PhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewCell.swift; sourceTree = "<group>"; };
 		FDDFFAA62994AFB800DC6158 /* PhotoDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataModel.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				FD7AF0E929911B4F003C99C6 /* Assets.xcassets */,
 				FD7AF0EB29911B4F003C99C6 /* LaunchScreen.storyboard */,
 				FD7AF0EE29911B4F003C99C6 /* Info.plist */,
-				FD98A4D52992155400425CAD /* Single.xib */,
 				FD98A4D72992533200425CAD /* ImageListViewController.swift */,
 				FD84B90E29936A0300DC7556 /* ImageViewController.swift */,
 				FDDFFAA42993BC2700DC6158 /* PhotoTableViewCell.swift */,
@@ -247,7 +244,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD7AF0ED29911B4F003C99C6 /* LaunchScreen.storyboard in Resources */,
-				FD98A4D62992155400425CAD /* Single.xib in Resources */,
 				FD7AF0EA29911B4F003C99C6 /* Assets.xcassets in Resources */,
 				FD7AF0E529911B4B003C99C6 /* Main.storyboard in Resources */,
 			);
