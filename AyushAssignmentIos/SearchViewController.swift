@@ -74,6 +74,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     func searchPhotoAPI(query: String) {
+        guard let path = Bundle.main.path(forResource: "secret", ofType: "plist") else {return}
+        print("path", path)
+        let url = URL(fileURLWithPath: path)
+        let data = NSDictionary(contentsOf: url)
         if (query == "") {
             let alert = UIAlertController.init(title: "Error", message: "Please Enter Search Query", preferredStyle: UIAlertController.Style.alert)
             
@@ -84,10 +88,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         }
         else {
             print(query)
-            let url: URL = URL.init(string: "https://pexelsdimasv1.p.rapidapi.com/v1/search?query=\(query)")!
+            let url: URL = URL.init(string: "\(data!.value(forKey: "api_url")!)v1/search?query=\(query)")!
             let headers = [
-                "X-RapidAPI-Key": "549256757amshe268d92b60dce2ap101f77jsn0b3eef329d7c",
-                "X-RapidAPI-Host": "PexelsdimasV1.p.rapidapi.com",
+                "X-RapidAPI-Key": data!.value(forKey: "api_key")! as! String,
+                "X-RapidAPI-Host": data!.value(forKey: "api_host")! as! String,
             ]
             var urlRequest: URLRequest = URLRequest.init(url: url)
             urlRequest.allHTTPHeaderFields = headers
@@ -129,6 +133,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     func searchVideoAPI(query: String) {
+        guard let path = Bundle.main.path(forResource: "secret", ofType: "plist") else {return}
+        print("path", path)
+        let url = URL(fileURLWithPath: path)
+        let data = NSDictionary(contentsOf: url)
         if (query == "") {
             let alert = UIAlertController.init(title: "Error", message: "Please Enter Search Query", preferredStyle: UIAlertController.Style.alert)
             
@@ -139,10 +147,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         }
         else {
             print(query)
-            let url: URL = URL.init(string: "https://pexelsdimasv1.p.rapidapi.com/videos/search?query=\(query)")!
+            let url: URL = URL.init(string: "\(data!.value(forKey: "api_url")!)videos/search?query=\(query)")!
             let headers = [
-                "X-RapidAPI-Key": "549256757amshe268d92b60dce2ap101f77jsn0b3eef329d7c",
-                "X-RapidAPI-Host": "PexelsdimasV1.p.rapidapi.com",
+                "X-RapidAPI-Key": data!.value(forKey: "api_key")! as! String,
+                "X-RapidAPI-Host": data!.value(forKey: "api_host")! as! String,
             ]
             var urlRequest: URLRequest = URLRequest.init(url: url)
             urlRequest.allHTTPHeaderFields = headers

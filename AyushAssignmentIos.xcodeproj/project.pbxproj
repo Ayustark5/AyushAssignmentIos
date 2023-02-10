@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4024F8FA29956D1100743B14 /* VideoDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4024F8F929956D1000743B14 /* VideoDataModel.swift */; };
 		40E09EE72995764500FE3C03 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E09EE62995764500FE3C03 /* VideoListViewController.swift */; };
+		40E09EF229960DED00FE3C03 /* secret.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40E09EF129960DED00FE3C03 /* secret.plist */; };
 		FD3E69822992119000C8A9DC /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3E69812992119000C8A9DC /* MyView.swift */; };
 		FD7AF0DE29911B4B003C99C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7AF0DD29911B4B003C99C6 /* AppDelegate.swift */; };
 		FD7AF0E029911B4B003C99C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7AF0DF29911B4B003C99C6 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 		40E09EEC2995FEF600FE3C03 /* AyushAssignmentIosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AyushAssignmentIosTests.xctest; path = "/Users/ayushraj/Desktop/Unext/AyushAssignmentIos/build/Debug-iphoneos/AyushAssignmentIosTests.xctest"; sourceTree = "<absolute>"; };
 		40E09EED2995FF4500FE3C03 /* AyushAssignmentIosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = AyushAssignmentIosUITests.xctest; path = "/Users/ayushraj/Desktop/Unext/AyushAssignmentIos/build/Debug-iphoneos/AyushAssignmentIosUITests.xctest"; sourceTree = "<absolute>"; };
 		40E09EEE299601E200FE3C03 /* AyushAssignmentIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = AyushAssignmentIos.app; path = "/Users/ayushraj/Desktop/Unext/AyushAssignmentIos/build/Debug-iphoneos/AyushAssignmentIos.app"; sourceTree = "<absolute>"; };
+		40E09EF129960DED00FE3C03 /* secret.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = secret.plist; sourceTree = "<group>"; };
 		FD3E69812992119000C8A9DC /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		FD7AF0DD29911B4B003C99C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD7AF0DF29911B4B003C99C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				FDDFFAA62994AFB800DC6158 /* PhotoDataModel.swift */,
 				4024F8F929956D1000743B14 /* VideoDataModel.swift */,
 				40E09EE62995764500FE3C03 /* VideoListViewController.swift */,
+				40E09EF129960DED00FE3C03 /* secret.plist */,
 			);
 			path = AyushAssignmentIos;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40E09EF229960DED00FE3C03 /* secret.plist in Resources */,
 				FD7AF0ED29911B4F003C99C6 /* LaunchScreen.storyboard in Resources */,
 				FD7AF0EA29911B4F003C99C6 /* Assets.xcassets in Resources */,
 				FD7AF0E529911B4B003C99C6 /* Main.storyboard in Resources */,
