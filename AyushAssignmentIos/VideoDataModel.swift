@@ -12,7 +12,7 @@ struct VideoDataModel: Codable{
     let per_page: Int
     let videos: [Video]
     let total_results: Int
-    let next_page: String
+    let next_page: String?
     let url: String
 }
 

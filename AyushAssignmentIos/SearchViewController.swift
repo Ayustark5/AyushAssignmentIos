@@ -32,7 +32,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     {
         
         var searchText = searchTextBox.text!
-        searchText = searchText.replacingOccurrences(of: " ", with: "%20")
+        searchText = searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
         switch(searchType.selectedSegmentIndex){
         case 0: do{
             self.searchPhotoAPI(query: searchText)
@@ -75,7 +75,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     func searchPhotoAPI(query: String) {
         guard let path = Bundle.main.path(forResource: "secret", ofType: "plist") else {return}
-        print("path", path)
         let url = URL(fileURLWithPath: path)
         let data = NSDictionary(contentsOf: url)
         if (query == "") {
@@ -87,7 +86,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: true)
         }
         else {
-            print(query)
             let url: URL = URL.init(string: "\(data!.value(forKey: "api_url")!)v1/search?query=\(query)")!
             let headers = [
                 "X-RapidAPI-Key": data!.value(forKey: "api_key")! as! String,
@@ -111,7 +109,16 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                         let decoder = JSONDecoder()
                         do {
                             let model = try decoder.decode(PhotoDataModel.self, from: data!)
-                            print(model.total_results!)
+                            if(model.total_results! < 1){
+                                DispatchQueue.main.async {
+                                    let alert = UIAlertController.init(title: "No Results", message: "Invalid search string, Try Again", preferredStyle: UIAlertController.Style.alert)
+                                    
+                                    alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+                                    }))
+                                    self.present(alert, animated: true)
+                                }
+                                return
+                            }
                             self.photoData = model.photos
                             DispatchQueue.main.async {
                                 self.performSegue(withIdentifier: "searchToImage", sender: nil)
@@ -146,7 +153,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: true)
         }
         else {
-            print(query)
             let url: URL = URL.init(string: "\(data!.value(forKey: "api_url")!)videos/search?query=\(query)")!
             let headers = [
                 "X-RapidAPI-Key": data!.value(forKey: "api_key")! as! String,
@@ -170,6 +176,17 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                         let decoder = JSONDecoder()
                         do {
                             let model = try decoder.decode(VideoDataModel.self, from: data!)
+                            print("Printing", "\(model) fg")
+                            if(model.total_results < 1){
+                                DispatchQueue.main.async {
+                                    let alert = UIAlertController.init(title: "No Results", message: "Invalid search string, Try Again", preferredStyle: UIAlertController.Style.alert)
+                                    
+                                    alert.addAction(UIAlertAction.init(title: "OK", style: UIAlertAction.Style.default, handler: {_ in
+                                    }))
+                                    self.present(alert, animated: true)
+                                }
+                                return
+                            }
                             self.videoData = model.videos
                             DispatchQueue.main.async {
                                 self.performSegue(withIdentifier: "searchToVideo", sender: nil)
